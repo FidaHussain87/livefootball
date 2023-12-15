@@ -4,6 +4,11 @@ class FootballScoreBoard {
   }
 
   startGame(homeTeam, awayTeam) {
+    homeTeam = homeTeam.toLowerCase();
+    awayTeam = awayTeam.toLowerCase();
+    if (this.findGame(homeTeam, awayTeam)) {
+      return;
+    }
     const newGame = {
       homeTeam,
       awayTeam,
@@ -33,6 +38,8 @@ class FootballScoreBoard {
   }
 
   finishGame(homeTeam, awayTeam) {
+    homeTeam = homeTeam.toLowerCase();
+    awayTeam = awayTeam.toLowerCase();
     this.games = this.games.filter(
       (game) => game.homeTeam !== homeTeam || game.awayTeam !== awayTeam
     );
