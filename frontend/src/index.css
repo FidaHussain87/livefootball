@@ -1,13 +1,140 @@
+/* Global Styles */
 body {
+  font-family: 'Arial', sans-serif;
+  background-color: #eaeaea;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: #004d99;
+}
+
+.scoreboard {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Game Info Form */
+.new-game {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.new-game input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.new-game button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.new-game button:hover {
+  background-color: #218838;
+}
+
+/* Game List Styles */
+.games {
+  margin-bottom: 20px;
+}
+
+.game-control {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game-control input {
+  margin-right: 10px;
+  padding: 5px;
+  width: 60px;
+}
+
+.game-control button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.game-control button:hover {
+  background-color: #0069d9;
+}
+
+/* Summary Styles */
+.summary {
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.summary h2 {
+  color: #004d99;
+  margin-top: 0;
+}
+
+.summary div {
+  margin-bottom: 0.4rem;
+}
+
+.summary-btn {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.summary-btn:hover {
+  background-color: #138496;
+}
+
+@media (max-width: 600px) {
+  .new-game {
+    flex-direction: column;
+  }
+
+  .new-game input {
+    margin-bottom: 10px;
+  }
+
+  .game-control {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .game-control input {
+    margin-bottom: 10px;
+  }
 }
