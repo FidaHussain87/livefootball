@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 
 export default function Match({ game, onUpdateScore, onFinishGame }) {
-  const [homeScore, setHomeScore] = useState(game.homeScore);
-  const [awayScore, setAwayScore] = useState(game.awayScore);
+  const [homeScore, setHomeScore] = useState(0);
+  const [awayScore, setAwayScore] = useState(0);
 
   const handleUpdate = () => {
     onUpdateScore(game.homeTeam, game.awayTeam, homeScore, awayScore);
+    setHomeScore(0);
+    setAwayScore(0);
   };
 
   return (
     <div className="game-control">
       <div>
-        {game.homeTeam} {homeScore} - {game.awayTeam} {awayScore}
+        {game.homeTeam} {game.homeScore} - {game.awayTeam} {game.awayScore}
       </div>
       <input
         type="number"
