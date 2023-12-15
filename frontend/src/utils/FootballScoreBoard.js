@@ -4,8 +4,6 @@ class FootballScoreBoard {
   }
 
   startGame(homeTeam, awayTeam) {
-    homeTeam = homeTeam.toLowerCase();
-    awayTeam = awayTeam.toLowerCase();
     if (this.findGame(homeTeam, awayTeam)) {
       return;
     }
@@ -41,7 +39,7 @@ class FootballScoreBoard {
     homeTeam = homeTeam.toLowerCase();
     awayTeam = awayTeam.toLowerCase();
     this.games = this.games.filter(
-      (game) => game.homeTeam !== homeTeam || game.awayTeam !== awayTeam
+      (game) => game.homeTeam.toLowerCase() !== homeTeam || game.awayTeam.toLowerCase() !== awayTeam
     );
   }
 

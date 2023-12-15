@@ -10,8 +10,8 @@ describe("FootballScoreBoard", () => {
   test("should start a game correctly", () => {
     scoreBoard.startGame("Team A", "Team B");
     expect(scoreBoard.games).toHaveLength(1);
-    expect(scoreBoard.games[0].homeTeam).toBe("team a");
-    expect(scoreBoard.games[0].awayTeam).toBe("team b");
+    expect(scoreBoard.games[0].homeTeam).toBe("Team A");
+    expect(scoreBoard.games[0].awayTeam).toBe("Team B");
   });
 
   test("should not allow starting a game with teams already playing", () => {
@@ -40,8 +40,8 @@ describe("FootballScoreBoard", () => {
     scoreBoard.updateScore("Team A", "Team B", 4, 5);
     scoreBoard.updateScore("Team C", "Team D", 6, 7);
     const summary = scoreBoard.getSummary();
-    expect(summary[0].homeTeam).toBe("team c");
-    expect(summary[1].homeTeam).toBe("team a");
+    expect(summary[0].homeTeam).toBe("Team C");
+    expect(summary[1].homeTeam).toBe("Team A");
   });
 
   test("should treat team names case-insensitively when starting a game", () => {
