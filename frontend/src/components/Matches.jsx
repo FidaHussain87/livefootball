@@ -2,9 +2,10 @@ import React from "react";
 import Match from "./Match";
 
 export default function Matches({ games, onUpdateScore, onFinishGame }) {
+  const reversedGames = [...games].reverse();
   return (
     <div className="games">
-      {games.map((game, index) => (
+      {reversedGames.map((game, index) => (
         <Match
           key={index}
           game={game}

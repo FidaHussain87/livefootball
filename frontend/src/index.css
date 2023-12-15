@@ -121,7 +121,7 @@ body {
   background-color: #138496;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 745px) {
   .new-game {
     flex-direction: column;
   }
@@ -132,11 +132,17 @@ body {
 
   .game-control {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
   }
 
   .game-control input {
     margin-bottom: 0.2rem;
+    margin-right: 0rem;
+    width: 50%;
   }
+  .game-control button{
+    width: 52.5%;
+  }
+
 }
