@@ -71,7 +71,7 @@ body {
 .game-control input {
   margin-right: 10px;
   padding: 5px;
-  width: 60px;
+  width: 6rem;
 }
 
 .game-control button {
@@ -81,6 +81,7 @@ body {
   padding: 8px 10px;
   border-radius: 4px;
   cursor: pointer;
+  width: 7rem;
 }
 
 .game-control button:hover {
@@ -132,9 +133,10 @@ body {
   .game-control {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
 
   .game-control input {
-    margin-bottom: 10px;
+    margin-bottom: 0.2rem;
   }
 }
