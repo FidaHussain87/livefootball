@@ -30,8 +30,8 @@ class FootballScoreBoard {
   updateScore(homeTeam, awayTeam, homeScore, awayScore) {
     const game = this.findGame(homeTeam, awayTeam);
     if (game) {
-      game.homeScore = homeScore;
-      game.awayScore = awayScore;
+      game.homeScore += homeScore;
+      game.awayScore += awayScore;
     }
   }
 

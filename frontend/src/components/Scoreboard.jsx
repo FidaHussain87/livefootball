@@ -8,7 +8,7 @@ export default function Scoreboard() {
   const [scoreBoard] = useState(new FootballScoreBoard());
   const [games, setGames] = useState([]);
   const [showSummary, setShowSummary] = useState(false);
-
+  const [goalTime, setGoalTime] = useState(0);
   const handleStartGame = (homeTeam, awayTeam) => {
     if (scoreBoard.findGame(homeTeam, awayTeam) || homeTeam === awayTeam) {
       alert("Game already in progress!");
@@ -19,8 +19,17 @@ export default function Scoreboard() {
   };
 
   const handleUpdateScore = (homeTeam, awayTeam, homeScore, awayScore) => {
+    const  currentTime=new Date().getMinutes();
+    const prevMatch = scoreBoard.findGame(homeTeam, awayTeam);
+    const prevTime=prevMatch?.startTime.getMinutes();
+    if (prevMatch) {
+      if ((homeScore+awayScore)>1)  {
+        return;
+      }
+    }
     scoreBoard.updateScore(homeTeam, awayTeam, homeScore, awayScore);
     setGames([...scoreBoard.games]);
+    setGoalTime(currentTime-prevTime)
   };
 
   const handleFinishGame = (homeTeam, awayTeam) => {
@@ -42,6 +51,7 @@ export default function Scoreboard() {
         games={games}
         onUpdateScore={handleUpdateScore}
         onFinishGame={handleFinishGame}
+        goalTime={goalTime}
       />
       <button onClick={handleGetSummary} className="summary-btn">
         {showSummary ? "Hide" : "Get"} Summary
